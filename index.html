@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GuardianLepas — demo</title>
+<style>
+  body { font-family: system-ui, sans-serif; background: #0d1117; color: #e6edf3;
+         margin: 0; display: flex; flex-direction: column; align-items: center;
+         padding: 32px 16px; }
+  h1 { font-size: 1.4rem; margin: 0 0 6px; }
+  p { color: #9fb0c1; max-width: 720px; text-align: center; line-height: 1.5; }
+  video { width: min(960px, 100%); border: 1px solid #2b3644; border-radius: 8px; }
+  a { color: #58a6ff; }
+</style>
+</head>
+<body>
+<h1>GuardianLepas — set it and forget it</h1>
+<p>A vault position on Base Sepolia, guarded by a Reactive Smart Contract on Lasna.
+When the price crashes, a cross-chain callback rescues the position — no keeper bot,
+no server, no human. Below: a live second run of the loop (49s).</p>
+<video controls preload="metadata" src="demo.mp4"></video>
+<p>Code and full on-chain evidence:
+<a href="https://github.com/naomi448/guardianlepas">github.com/naomi448/guardianlepas</a></p>
+</body>
+</html>
