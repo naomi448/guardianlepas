@@ -66,3 +66,19 @@ Post-loop accounting (proof both executions were billed and settled, no debt):
 - RSC: debt 0, reserves 0.5 -> 0.487272 lREACT (react() charge ~0.0127 lREACT)
 - Guard: debt 0, reserves 0.015 -> 0.0149993 ETH (callback charge ~0.0000007 ETH)
 - Vault positionOpen: true -> false (only reachable via guard <- proxy <- RSC)
+
+## Second run — the demo video run (2026-11-21 ~06:25 WIB)
+
+The loop was fired a second time, live, as the recorded demo (demo.mp4 /
+https://naomi448.github.io/guardianlepas/demo.mp4):
+
+1. oracle.setPrice(3000): 0xe46f82b002c188d51b41de9ab76a7baf0b39707d13ca2414ffcecd3539e8217c
+2. vault.openPosition(1000): 0x98ab9d5fb13a64f5dcb9e628c63d1d82271ae25355e62f3d5699e6b9cefbfc08
+3. oracle.setPrice(1500): 0x350117bb00e8244e5ba8cef96771b548107b095c4b6f5186415653437e03c8ff
+4. vault.checkHealth() emits Danger (price 1500, health 75):
+   0xf4358b03bb3a0ff04a805fda218edfc777319e42ec7241ef6a7aa41a2f7c107b
+   (Base Sepolia block 61476359)
+5. Destination — callback delivered by the proxy, position rescued:
+   0xd02524e5c6b9e0e7c19b575bc55e2c38b0e320635c5e41d4031125b71e5c14e9
+   (Base Sepolia block 61476366 — 7 blocks after the trigger;
+   PositionRescued event in this tx; vault positionOpen true -> false)

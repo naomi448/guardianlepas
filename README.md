@@ -12,6 +12,9 @@ clicking anything. The position owner literally sets it and forgets it.
 Built for the **Reactive Omni Buildathon** (DoraHacks), track
 **Set It and Forget It**.
 
+**Demo video (49 seconds — a second live run of the rescue loop):**
+https://naomi448.github.io/guardianlepas/demo.mp4
+
 ## The problem
 
 Anyone who has held a leveraged or collateralized position knows the routine:
